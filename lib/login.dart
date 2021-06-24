@@ -52,22 +52,46 @@ class _State extends State<login> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.brown,
           title: Text('Login'),
         ),
-        body: _isloading?Center(child: CircularProgressIndicator()):Padding(
-            padding: EdgeInsets.all(10),
-            child: ListView(
+        body: _isloading?Center(child: CircularProgressIndicator()):Container(
+            height: double.infinity,
+            decoration:BoxDecoration(
+                color:Colors.transparent,
+                image: DecorationImage(
+                  image:AssetImage("assets/bg2.jpg",),
+                  colorFilter: ColorFilter.mode(Colors.transparent.withOpacity(0.9), BlendMode.dstATop),
+                  fit: BoxFit.cover,
+                )
+            ),
+            padding: EdgeInsets.only(top:10,left:10,right:10),
+            child: Container(
+              margin: EdgeInsets.only(top:200),
+              height: 250,
+                decoration: BoxDecoration(
+                  borderRadius:BorderRadius.only(topLeft: Radius.circular(60), topRight: Radius.circular(60)),
+                  boxShadow: [new BoxShadow(
+                    color: Colors.brown,
+                    blurRadius: 20.0,
+                  ),],
+                  color: Colors.white,
+                ),
+                child:Column(children:[
+                  Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        'Welcome',
+                        style: TextStyle(
+                            color: Colors.brown,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 40),
+                      )),
+                  Column(
               children: <Widget>[
-                Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      'Sample',
-                      style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 30),
-                    )),
+                SizedBox(height: 20,),
+
                 Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
@@ -102,7 +126,7 @@ class _State extends State<login> {
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: RaisedButton(
                       textColor: Colors.white,
-                      color: Colors.blue,
+                      color: Colors.brown,
                       child: Text('Login'),
                       onPressed: () => _check(),
                     )),
@@ -113,7 +137,7 @@ class _State extends State<login> {
                         FlatButton(
                           child: Text(
                             'Sign up',
-                            style: TextStyle(fontSize: 20,color: Colors.blue),
+                            style: TextStyle(fontSize: 20,color: Colors.brown),
                           ),
                           onPressed: () {
                            setState(() {
@@ -125,7 +149,7 @@ class _State extends State<login> {
                       mainAxisAlignment: MainAxisAlignment.center,
                     ))
               ],
-            )));
+                )]))));
   }
 }
 class data

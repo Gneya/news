@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:api_test/login.dart';
+import 'package:api_test/news.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:api_test/signup.dart';
@@ -41,9 +44,10 @@ check(){
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Text("Welcome");
   }
-  }
+}

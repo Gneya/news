@@ -67,19 +67,40 @@ class _State extends State<signup> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Sign up'),
+          backgroundColor: Colors.brown,
         ),
 
-        body:_isloading ? Center(child: CircularProgressIndicator()): Padding(
+        body:_isloading ? Center(child: CircularProgressIndicator()): Container(
+            height: double.infinity,
+            decoration:BoxDecoration(
+                color:Colors.transparent,
+                image: DecorationImage(
+                  image:AssetImage("assets/bg2.jpg",),
+                  colorFilter: ColorFilter.mode(Colors.transparent.withOpacity(0.9), BlendMode.dstATop),
+                  fit: BoxFit.cover,
+                )
+            ),
             padding: EdgeInsets.all(10),
-            child: Form(key:_formkey,child:ListView(
+            child: Container(
+              margin: EdgeInsets.only(top:150),
+height: 250,
+decoration: BoxDecoration(
+borderRadius:BorderRadius.only(topLeft: Radius.circular(60), topRight: Radius.circular(60)),
+boxShadow: [new BoxShadow(
+color: Colors.brown,
+blurRadius: 20.0,
+),],
+color: Colors.white,
+),
+    child:Form(key:_formkey,child:ListView(
               children: <Widget>[
                 Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      'Sample',
+                      'Welcome',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.brown,
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
                     )),
@@ -162,12 +183,12 @@ class _State extends State<signup> {
                     margin: EdgeInsets.only(top: 20),
                     child: RaisedButton(
                       textColor: Colors.white,
-                      color: Colors.blue,
+                      color: Colors.brown,
                       child: Text('Sign up'),
                       onPressed:()=>_check()
                     )),
                ]
-            ))));
+            )))));
   }
 }
 class data
