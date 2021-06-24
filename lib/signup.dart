@@ -191,11 +191,11 @@ color: Colors.white,
             )))));
   }
 }
-class data
-{
-      String str;
-      data.fromJson(Map<String,dynamic> json)
-      {
-        this.str=json["Success"];
-      }
+class data {
+  String str;
+
+  data.fromJson(Map<String, dynamic> json)
+  {
+    this.str = json["Success"];
+  }
 }
